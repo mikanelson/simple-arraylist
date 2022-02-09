@@ -13,6 +13,36 @@ public class SimpleArrayList {
 		objectArray = new Object[size];
 	}
 	
+	public boolean contains(Object o) {
+		for (int i = 0; i < objectArray.length; i++) {
+			if (objectArray[i] != null && objectArray[i].equals(o)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean equals(SimpleArrayList a) {
+		if (a.getArrayItems() != arrayItems) {
+			return false;
+		} else {
+			Object[] aObjects = a.getObjectArray();
+			for (int i = 0; i < arrayItems; i++) {
+				boolean contains = false;
+				for (int j = 0; j < arrayItems; j++) {
+					if (aObjects[i].equals(objectArray[j])) {
+						contains = true;
+						break;
+					}
+				}
+				if (!contains) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+	
 	public void add(Object o) {
 		if (arrayItems == objectArray.length) {
 			Object[] t = new Object[objectArray.length * 2];
@@ -27,6 +57,10 @@ public class SimpleArrayList {
 	
 	public Object get(int index) {
 		return objectArray[index];
+	}
+	
+	public Object[] getObjectArray() {
+		return objectArray;
 	}
 	
 	public int getLength() {
