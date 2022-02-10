@@ -86,6 +86,9 @@ public class SimpleArrayList {
 	
 	// will throw IndexOutOfBoundsException, desired
 	public void set(int index, Object o) {
+		if (objectArray[index] == null) {
+			arrayItems++;
+		}
 		objectArray[index] = o;
 	}
 }
