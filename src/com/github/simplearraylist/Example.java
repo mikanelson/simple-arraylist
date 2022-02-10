@@ -3,45 +3,35 @@ package com.github.simplearraylist;
 public class Example {
 
 	public static void main(String[] args) {
-		//create and fill arraylist
 		SimpleArrayList i = new SimpleArrayList();
-		for (int j = 0; j < i.getLength(); j++) {
-			i.add(j);
-		}
-		
+		i.fillArray();
 		SimpleArrayList i2 = new SimpleArrayList();
-		for (int j = 0; j < i2.getLength(); j++) {
-			i2.add(i2.getLength() - (j + 1));
-		}
-		
+		i2.fillArray();
 		SimpleArrayList i3 = new SimpleArrayList(129);
-		for (int j = 0; j < i3.getLength(); j++) {
-			i3.add(j);
-		}
+		i3.fillArray();
 		
-		System.out.println("Items in array: " + i.getArrayItems());
-		System.out.println("Array size: " + i.getLength());
+		System.out.println(i.toString());
+		System.out.println(i2.toString());
+		System.out.println(i3.toString());
 		
 		System.out.println("Contains: ");
-		System.out.println(i.contains("test"));
-		System.out.println(i.contains("string"));
-		System.out.println(i.contains("test"));
-		System.out.println(i.contains(1000));
-		System.out.println(i.contains(100));
+		System.out.println("test: " + i.contains("test"));
+		System.out.println("string" + i.contains("string"));
+		System.out.println("1000: " + i.contains(1000));
+		System.out.println("100: " + i.contains(100));
 		
 		System.out.println("Equals:");
-		System.out.println(i.equals(i2));
-		System.out.println(i.equals(i3));
+		System.out.println("i.equals(i2): " + i.equals(i2));
+		System.out.println("i.equals(i3): " + i.equals(i3));
 		
-		//over-fill array and print new arraylist
 		i.add("string");
-		System.out.println("Items in array: " + i.getArrayItems());
-		System.out.println("Array size: " + i.getLength());
+		System.out.println(i.toString());
+		System.out.println("i.equals(i2): " + i.equals(i2));
 		
-		//Compare Again
-		System.out.println(i.equals(i2));
+		System.out.println("Set:");
+		i.set(130, 130);
+		System.out.println(i.toString());
 		
-		// IndexOutOfBounds exception
 		i.set(i.getLength(), 20);
 	}
 

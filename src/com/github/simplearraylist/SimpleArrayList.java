@@ -1,5 +1,7 @@
 package com.github.simplearraylist;
 
+import java.util.Arrays;
+
 public class SimpleArrayList {
 	private static final int INITIAL_ARRAY_SIZE = 128;
 	private Object[] objectArray;
@@ -53,6 +55,17 @@ public class SimpleArrayList {
 		}
 		objectArray[arrayItems] = o;
 		arrayItems++;
+	}
+	
+	public void fillArray() {
+		for (int i = 0; i < objectArray.length; i++) {
+			add(i);
+		}
+	}
+	
+	public String toString() {
+		return Arrays.toString(objectArray);
+		
 	}
 	
 	public Object get(int index) {
