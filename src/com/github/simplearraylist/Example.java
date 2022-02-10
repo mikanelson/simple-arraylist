@@ -10,6 +10,8 @@ public class Example {
 		SimpleArrayList i3 = new SimpleArrayList(129);
 		i3.fillArray();
 		
+		
+
 		System.out.println(i.toString());
 		System.out.println(i2.toString());
 		System.out.println(i3.toString());
@@ -27,6 +29,10 @@ public class Example {
 		i.add("string");
 		System.out.println(i.toString());
 		System.out.println("i.equals(i2): " + i.equals(i2));
+		
+		System.out.println(i.toString());
+		System.out.println(i3.toString());
+		System.out.println(i3.getArrayItems());
 		
 		System.out.println("Set:");
 		i.set(130, 130);

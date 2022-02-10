@@ -89,6 +89,9 @@ public class SimpleArrayList {
 		if (objectArray[index] == null) {
 			arrayItems++;
 		}
+		if (o == null) {
+			arrayItems--;
+		}
 		objectArray[index] = o;
 	}
 }
